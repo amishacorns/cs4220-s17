@@ -5,7 +5,8 @@ L[1] = sqrt(2);
 s[1] = N*L[1]/2;
 for k = 1:30
   N = N*2;
-  L[k+1] = sqrt( 2*(1-sqrt(1-L[k]^2/4)) );
+  z = L[k]^2/4
+  L[k+1] = sqrt(2)*sqrt(z/(1 + sqrt(1 - z)))
   s[k+1] = N*L[k+1]/2;
 end
 
