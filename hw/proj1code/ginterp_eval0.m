@@ -12,5 +12,8 @@ function [obj] = ginterp_eval0(obj)
   % TASK
   % ... fix this to fill in obj.u(Ia) given obj.u(Ib)
   obj.u(Ia) = 0;
+  L11 = obj.L(Ia, Ia);
+  L22 = obj.L(Ia, Ib);
+  obj.u(Ia) =  -1 * L12 * obj.u(Ib) \ L11;
   % END TASK
 end
